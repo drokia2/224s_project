@@ -33,7 +33,21 @@ for native in natives:
       print "ERROR WITH ", native , i+1
       print "\n"
     else:
-      mlfs_paths = 'data/mlfs/%s_%d.mlf' % (native, i+1)
+      mlfs_paths = 'data/mlfs/native/%s_%d.mlf' % (native, i+1)
+      copy_failure = call(['cp', 'tmp/aligned.mlf', mlfs_paths])
+      if (copy_failure):
+        print "shit the copy didnt work"
+
+for foreigner in foreigners:
+  for i in range(NUM_TRANSCRIPTS):
+    transcript = './data/transcripts/%s' % TRANSCRIPTS[i]
+    wav_file = './data/sounds/%s_%d.wav' % (foreigner, i+1)
+    failure = call(['python', 'align.py', wav_file, transcript, TEXT_GRID ])
+    if (failure):
+      print "ERROR WITH ", foreigner , i+1
+      print "\n"
+    else:
+      mlfs_paths = 'data/mlfs/foreign/%s_%d.mlf' % (foreigner, i+1)
       copy_failure = call(['cp', 'tmp/aligned.mlf', mlfs_paths])
       if (copy_failure):
         print "shit the copy didnt work"

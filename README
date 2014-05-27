@@ -1,0 +1,14 @@
+
+
+
+
+
+
+####WORKFLOW FOR GETTING SOUNDS #######
+
+to test if it works add your FWA's name in the FWOA.txt ( yes this is the
+file for friends without accents but just put it temporarily at the top
+of the file) and run 'sudo python align_all.py'  and make sure that the first 
+couple of so ( assuming u added it to the top of the file ) and it will tell you which
+one it has an error in. 
+

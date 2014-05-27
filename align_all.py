@@ -5,7 +5,7 @@
 #
 #usage:
 #   python align_all.py                 # to run alignment on all students
-#   python align_all.py name+           # to run alignment on one or more specific names listed; 
+#   python align_all.py name+           #NOT IMPLEMENTED YET# to run alignment on one or more specific names listed; 
                                         # names are delimeted by spaces i.e. python align_all.py adriana sam ankit
 
 # you might have to do sudo right before running this
@@ -32,4 +32,9 @@ for native in natives:
     if (failure):
       print "ERROR WITH ", native , i+1
       print "\n"
+    else:
+      mlfs_paths = 'data/mlfs/%s_%d.mlf' % (native, i+1)
+      copy_failure = call(['cp', 'tmp/aligned.mlf', mlfs_paths])
+      if (copy_failure):
+        print "shit the copy didnt work"
     

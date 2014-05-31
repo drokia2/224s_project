@@ -53,9 +53,8 @@ for line in filename:
 			#print 'diff:', diff
 			#print 'stddevs',stddevs
 			deviations.append(max(stddevs,0))
-      
 			if stddevs > 1:
-				print "error in word ",splits[0],' at phone ', splits[i]
+				print "Mispronunciation in word ",splits[0],' at phone ', splits[i], '.  ', stddevs,' std devs below mean.'
 				pylab.annotate(splits[0]+'_'+splits[i], xy=(counter,stddevs), xytext=(counter,stddevs))
 				print i, stddevs
 			i+=2

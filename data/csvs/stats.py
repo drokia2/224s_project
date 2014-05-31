@@ -30,7 +30,7 @@ print stdvs
 filename = open('transcript_foreigner_1.csv', 'r')
 
 found_person = False
-person = 'elvis'
+person = 'dulcie'
 
 deviations = []
 counter = 0
@@ -56,7 +56,6 @@ for line in filename:
 			if stddevs > 1:
 				print "Mispronunciation in word ",splits[0],' at phone ', splits[i], '.  ', stddevs,' std devs below mean.'
 				pylab.annotate(splits[0]+'_'+splits[i], xy=(counter,stddevs), xytext=(counter,stddevs))
-				print i, stddevs
 			i+=2
 			counter+=1
 

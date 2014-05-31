@@ -68,7 +68,6 @@ for line in filename:
 			if stddevs > threshold:
 				print "Mispronunciation in word ",splits[0],' at phone ', splits[i], '.  ', stddevs,' std devs below mean.'
 				pylab.annotate(splits[0]+'_'+splits[i], xy=(counter,stddevs), xytext=(counter,stddevs))
-				print i, stddevs
 			i+=2
 			counter+=1
 
